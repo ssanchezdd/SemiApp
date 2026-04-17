@@ -290,6 +290,23 @@ window.selectOption = selectOption;
 window.nextQuestion = nextQuestion;
 window.renderQuiz = renderQuiz;
 
+// ===== Lightbox =====
+function openLightbox(el) {
+  const img = el.querySelector('img');
+  if (!img) return;
+  const lb = document.getElementById('lightbox');
+  const lbImg = document.getElementById('lightboxImg');
+  lbImg.src = img.src;
+  lbImg.alt = img.alt;
+  lb.classList.add('show');
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('show');
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+window.openLightbox = openLightbox;
+window.closeLightbox = closeLightbox;
+
 // ===== Hash-based navigation =====
 function handleHash() {
   const hash = window.location.hash.replace('#', '');
