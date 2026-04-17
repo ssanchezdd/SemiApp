@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="QuizPageRoot"
+    x:Class="SemiologyAtlas.Pages.QuizPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SemiologyAtlas.Controls"
+    xmlns:models="clr-namespace:SemiologyAtlas.Models"
+    xmlns:vm="clr-namespace:SemiologyAtlas.ViewModels"
+    x:DataType="vm:QuizViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,18,20,40" Spacing="18">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding LanguageStatusText}" VerticalOptions="Center" />
+                <Button Clicked="OnToggleLanguageClicked" Style="{StaticResource OutlineButtonStyle}" Text="{Binding LanguageButtonText}" />
+            </Grid>
+
+            <Border Background="{StaticResource BannerBrush}" Padding="22" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="26" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="10">
+                    <Label Style="{StaticResource EyebrowLabel}" Text="{Binding KnowledgeCheckLabel}" TextColor="{StaticResource WarmWhite}" />
+                    <Label Style="{StaticResource BannerTitleLabel}" Text="{Binding PageTitle}" />
+                    <Label
+                        Style="{StaticResource HeroBodyLabel}"
+                        Text="{Binding HeroDescription}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding ReviewDeckTitle}" />
+                <ScrollView Orientation="Horizontal">
+                    <HorizontalStackLayout
+                        Spacing="14"
+                        BindableLayout.ItemsSource="{Binding ReviewCards}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:StudyGuideCard">
+                                <Border Background="{StaticResource CardBrush}" Padding="16" Stroke="{StaticResource MistBrush}" WidthRequest="280">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="22" />
+                                    </Border.StrokeShape>
+                                    <VerticalStackLayout Spacing="10">
+                                        <controls:AnimatedClinicalView AnimationKey="{Binding AnimationKey}" HeightRequest="120" />
+                                        <Label Style="{StaticResource CardTitleLabel}" Text="{Binding Title}" />
+                                        <Label Style="{StaticResource BodyLabel}" Text="{Binding Summary}" />
+                                        <Button
+                                            Clicked="OnOpenReviewClicked"
+                                            CommandParameter="{Binding Route}"
+                                            Style="{StaticResource OutlineButtonStyle}"
+                                            Text="{Binding OpenActionText}" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+            <Border Background="{StaticResource WarmWhiteBrush}" Padding="20" Stroke="{StaticResource MistBrush}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="14">
+                    <Label Style="{StaticResource EyebrowDarkLabel}" Text="{Binding ProgressLabel}" />
+                    <ProgressBar Progress="{Binding Progress}" ProgressColor="{StaticResource Coral}" />
+                    <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding CurrentQuestion.Category}" />
+                    <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding CurrentQuestion.Prompt}" />
+                    <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding CurrentQuestion.BedsidePearl}" />
+                    <Border Background="{StaticResource CardBrush}" Padding="10" Stroke="{StaticResource MistBrush}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="18" />
+                        </Border.StrokeShape>
+                        <controls:AnimatedClinicalView AnimationKey="{Binding CurrentAnimationKey}" HeightRequest="190" />
+                    </Border>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout
+                Spacing="12"
+                BindableLayout.ItemsSource="{Binding Options}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="vm:QuizOptionItem">
+                        <Button
+                            BackgroundColor="{Binding BackgroundColor}"
+                            BorderColor="{Binding BorderColor}"
+                            BorderWidth="1"
+                            Clicked="OnOptionClicked"
+                            CommandParameter="{Binding .}"
+                            CornerRadius="18"
+                            Padding="16,14"
+                            Style="{StaticResource QuizButtonStyle}"
+                            Text="{Binding Text}"
+                            TextColor="{Binding TextColor}" />
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <Border
+                Background="{StaticResource CardBrush}"
+                IsVisible="{Binding HasFeedback}"
+                Padding="18"
+                Stroke="{StaticResource MistBrush}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="22" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="6">
+                    <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding FeedbackTitle}" />
+                    <Label Style="{StaticResource BodyLabel}" Text="{Binding FeedbackText}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Button
+                Clicked="OnNextQuestionClicked"
+                IsVisible="{Binding ShowNextButton}"
+                Style="{StaticResource AccentButtonStyle}"
+                Text="{Binding NextQuestionText}" />
+
+            <Button
+                Clicked="OnRestartClicked"
+                IsVisible="{Binding IsQuizComplete}"
+                Style="{StaticResource OutlineButtonStyle}"
+                Text="{Binding RestartQuizText}" />
+
+            <Border Background="{StaticResource WarmWhiteBrush}" Padding="18" Stroke="{StaticResource MistBrush}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="22" />
+                </Border.StrokeShape>
+                <Label Style="{StaticResource BodyLabel}" Text="{Binding ScoreSummary}" />
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

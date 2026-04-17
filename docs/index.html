@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apariencia General - Atlas de Semiologia</title>
+  <meta name="description" content="Recurso digital interactivo para la enseñanza de la evaluación de la apariencia general en la práctica clínica. Universidad de Caldas.">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="logo">
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu">&#9776;</button>
+    Apariencia General <span>Atlas de Semiologia</span>
+  </div>
+</header>
+
+<!-- ===== SIDEBAR OVERLAY (mobile) ===== -->
+<div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+<!-- ===== SIDEBAR ===== -->
+<nav class="sidebar" id="sidebar">
+  <div class="nav-section">Inicio</div>
+  <a href="#inicio" data-section="inicio" class="active"><span class="nav-icon">&#127968;</span> Introduccion</a>
+
+  <div class="nav-section">Parametros</div>
+  <a href="#genero" data-section="genero"><span class="nav-icon">1</span> Genero</a>
+  <a href="#tipo" data-section="tipo"><span class="nav-icon">2</span> Tipo constitucional</a>
+  <a href="#facies" data-section="facies"><span class="nav-icon">3</span> Facies</a>
+  <a href="#cambios" data-section="cambios"><span class="nav-icon">4</span> Coloracion de la piel</a>
+  <a href="#movimientos" data-section="movimientos"><span class="nav-icon">5</span> Movimientos involuntarios</a>
+  <a href="#actitud" data-section="actitud"><span class="nav-icon">6</span> Actitud o postura</a>
+  <a href="#marcha" data-section="marcha"><span class="nav-icon">7</span> Marcha</a>
+  <a href="#conciencia" data-section="conciencia"><span class="nav-icon">8</span> Estado de conciencia</a>
+  <a href="#orientacion" data-section="orientacion"><span class="nav-icon">9</span> Orientacion</a>
+  <a href="#animo" data-section="animo"><span class="nav-icon">10</span> Estado de animo</a>
+  <a href="#nutricion" data-section="nutricion"><span class="nav-icon">11</span> Estado de nutricion</a>
+  <a href="#hidratacion" data-section="hidratacion"><span class="nav-icon">12</span> Estado de hidratacion</a>
+  <a href="#olores" data-section="olores"><span class="nav-icon">13</span> Olores anormales</a>
+  <a href="#dolor" data-section="dolor"><span class="nav-icon">14</span> Evidencia de dolor</a>
+  <a href="#disnea" data-section="disnea"><span class="nav-icon">15</span> Evidencia de disnea</a>
+  <a href="#tos" data-section="tos"><span class="nav-icon">16</span> Evidencia de tos</a>
+  <a href="#actitud-enfermedad" data-section="actitud-enfermedad"><span class="nav-icon">17</span> Actitud frente a la enfermedad</a>
+  <a href="#presencia" data-section="presencia"><span class="nav-icon">18</span> Elementos externos</a>
+  <a href="#edad" data-section="edad"><span class="nav-icon">19</span> Edad aparente</a>
+  <a href="#salud" data-section="salud"><span class="nav-icon">20</span> Estado de salud</a>
+
+  <div class="nav-section">Evaluacion</div>
+  <a href="#autoevaluacion" data-section="autoevaluacion"><span class="nav-icon">&#9997;</span> Autoevaluacion</a>
+  <a href="#bibliografia" data-section="bibliografia"><span class="nav-icon">&#128218;</span> Bibliografia</a>
+</nav>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main" id="mainContent">
+
+  <!-- ==================== INICIO ==================== -->
+  <div class="section active" id="inicio">
+    <div class="hero">
+      <div class="badge">Universidad de Caldas &mdash; Semiologia</div>
+      <h1>Evaluacion de la Apariencia General</h1>
+      <p>Recurso digital interactivo para la enseñanza y valoracion de los 20 parametros de la apariencia general en la practica clinica.</p>
+    </div>
+
+    <div class="content-block">
+      <h4>El Ojo Clinico</h4>
+      <p>La justa valoracion y el reconocimiento de los beneficios para la exactitud y prontitud del diagnostico medico que se derivan de la utilizacion de los mas modernos metodos que ofrece la tecnologia, tales como la ecografia, la resonancia magnetica, la tomografia, etc., no deberia menoscabar la importancia de un examen completo y del desarrollo de lo que se ha denominado <strong>"el ojo clinico"</strong>.</p>
+      <br>
+      <p>Juan Nicolas Corvisart, considerado como el profesor de medicina mas importante de Paris en tiempos de la revolucion francesa, exhortaba a sus alumnos diciendoles: <em>"Observad, aguzad vuestros sentidos de manera que percibais los sintomas y signos de las enfermedades"</em>.</p>
+      <br>
+      <p>El concepto de "ojo clinico" no se refiere a la capacidad para diagnosticar acertadamente una patologia mediante la palpacion, percusion, auscultacion, sino mas a esa habilidad que tenian los antiguos maestros de la medicina, que habian desarrollado un tal sentido de la observacion, que captaban en un instante, a la cabecera del paciente, un sinnumero de datos que podian pasar desapercibidos para otros y a los que concedian gran importancia diagnostica.</p>
+      <br>
+      <p>Como dice Fidel Schaposnik en su texto de Semiologia: <em>"El llamado ojo clinico consiste precisamente en valorar en su justa medida, esos pequeños sintomas y signos que constituyen el lenguaje criptografico de los organos enfermos, y aplicar la experiencia y los conocimientos previos a la solucion de las situaciones enigmaticas que enfrenta el internista"</em>.</p>
+      <br>
+      <p><em>"Un buen observador describe los rasgos distintivos del aspecto del paciente con tal precision, que un colega sabria reconocerlo entre una multitud de extraños"</em> &mdash; Barbara Bates</p>
+    </div>
+
+    <div class="content-block">
+      <h4>Cuando empieza la evaluacion</h4>
+      <p>Desde el primer momento que el medico tiene contacto con un paciente &mdash; bien sea cuando entra al consultorio, en una sala de urgencias o cuando se acerca a su cama &mdash; observa la forma como camina, su facies, la manera como saluda y como se comporta, sus movimientos, escucha su voz, percibe sus olores; en fin, recibe una cantidad de informacion que ayuda a encaminar un diagnostico aun antes de realizar un examen fisico completo.</p>
+      <br>
+      <p>La evaluacion de la apariencia general puede indicarnos la prontitud con la cual debemos realizar medidas terapeuticas en un paciente que llega, por ejemplo, a un servicio de urgencias.</p>
+    </div>
+
+    <h3 style="margin:1.5rem 0 1rem;color:var(--primary-dark)">Los 20 parametros</h3>
+    <div class="card-grid">
+      <div class="card" onclick="navigateTo('genero')"><h3>1. Genero</h3><p>Diferencias observables entre hombre y mujer mas alla de los genitales externos.</p></div>
+      <div class="card" onclick="navigateTo('tipo')"><h3>2. Tipo constitucional</h3><p>Habito corporal: longilineo, brevilineo o normilineo.</p></div>
+      <div class="card" onclick="navigateTo('facies')"><h3>3. Facies</h3><p>Apariencia general de la cara que revela patologias especificas.</p></div>
+      <div class="card" onclick="navigateTo('cambios')"><h3>4. Coloracion de la piel</h3><p>Palidez, rubicundez, cianosis e ictericia.</p></div>
+      <div class="card" onclick="navigateTo('movimientos')"><h3>5. Movimientos involuntarios</h3><p>Temblores, corea, atetosis, mioclonias y mas.</p></div>
+      <div class="card" onclick="navigateTo('actitud')"><h3>6. Actitud o postura</h3><p>Posicion adoptada consciente o inconscientemente por el paciente.</p></div>
+      <div class="card" onclick="navigateTo('marcha')"><h3>7. Marcha</h3><p>Patrones de marcha normales y patologicas.</p></div>
+      <div class="card" onclick="navigateTo('conciencia')"><h3>8. Estado de conciencia</h3><p>Alerta, somnolencia, estupor y coma.</p></div>
+      <div class="card" onclick="navigateTo('orientacion')"><h3>9. Orientacion</h3><p>Orientacion en tiempo, espacio y persona.</p></div>
+      <div class="card" onclick="navigateTo('animo')"><h3>10. Estado de animo</h3><p>Depresion, ansiedad, exaltacion y enojo.</p></div>
+      <div class="card" onclick="navigateTo('nutricion')"><h3>11. Estado de nutricion</h3><p>Desnutricion, caquexia y obesidad.</p></div>
+      <div class="card" onclick="navigateTo('hidratacion')"><h3>12. Estado de hidratacion</h3><p>Signos de deshidratacion al examen general.</p></div>
+      <div class="card" onclick="navigateTo('olores')"><h3>13. Olores anormales</h3><p>Halitosis, bromhidrosis y olores caracteristicos.</p></div>
+      <div class="card" onclick="navigateTo('dolor')"><h3>14. Evidencia de dolor</h3><p>Signos observables de dolor en el paciente.</p></div>
+      <div class="card" onclick="navigateTo('disnea')"><h3>15. Evidencia de disnea</h3><p>Signos clinicos de dificultad respiratoria.</p></div>
+      <div class="card" onclick="navigateTo('tos')"><h3>16. Evidencia de tos</h3><p>Clasificacion y tipos de tos.</p></div>
+      <div class="card" onclick="navigateTo('actitud-enfermedad')"><h3>17. Actitud frente a la enfermedad</h3><p>Sentimientos y actitudes ante la enfermedad.</p></div>
+      <div class="card" onclick="navigateTo('presencia')"><h3>18. Elementos externos</h3><p>Ferulas, sondas, catéteres y monitores.</p></div>
+      <div class="card" onclick="navigateTo('edad')"><h3>19. Edad aparente</h3><p>Correlacion entre edad aparente y cronologica.</p></div>
+      <div class="card" onclick="navigateTo('salud')"><h3>20. Estado de salud</h3><p>Conclusion subjetiva del estado general del paciente.</p></div>
+    </div>
+  </div>
+
+  <!-- ==================== 1. GENERO ==================== -->
+  <div class="section" id="genero">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 1 de 20</div>
+      <h2>Genero</h2>
+      <p>Diferencias observables entre hombre y mujer durante la inspeccion general</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Ademas de las diferencias en los genitales externos entre hombre y mujer, existen otras caracteristicas que nos ayudan a determinar, durante la inspeccion general, el genero de la persona. Adicionalmente existen diferencias en cuanto a la tonalidad de la voz y la distribucion y cantidad del vello corporal.</p>
+    </div>
+    <div class="content-block">
+      <h4>Tabla de diferencias de genero</h4>
+      <div style="overflow-x:auto">
+        <table>
+          <thead><tr><th>Caracteristica</th><th>Hombre</th><th>Mujer</th></tr></thead>
+          <tbody>
+            <tr><td>Implantacion del cabello</td><td>Entradas laterales (regiones frontotemporales)</td><td>Limite frontal recto, pocas entradas laterales</td></tr>
+            <tr><td>Piel de la cara</td><td>Aspera por la distribucion pilosa</td><td>Suave</td></tr>
+            <tr><td>Cejas</td><td>Mas pobladas, tendencia a unirse en el centro</td><td>Menos pobladas</td></tr>
+            <tr><td>Cartilago tiroides</td><td>Mayor</td><td>Menor</td></tr>
+            <tr><td>Longitud interacromial</td><td>Mayor</td><td>Menor</td></tr>
+            <tr><td>Longitud intertrocanterea</td><td>Menor</td><td>Mayor</td></tr>
+            <tr><td>Pilificacion</td><td>Barba, bigote y patillas</td><td>No hay barba, bigote ni patillas</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 2. TIPO CONSTITUCIONAL ==================== -->
+  <div class="section" id="tipo">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 2 de 20</div>
+      <h2>Tipo Constitucional</h2>
+      <p>Conjunto de caracteres morfologicos y funcionales que definen la complexion del individuo</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>La determinacion del biotipo es util para la adecuada interpretacion de las variantes anatomicas externas y viscerales. En general se utiliza la siguiente clasificacion:</p>
+    </div>
+    <div class="content-block">
+      <h4>Longilineo (Leptosomico o Astenico)</h4>
+      <p>La altura es mayor que la envergadura; la cabeza es dolicocefalica (diametro anteroposterior mayor que el transverso), el cuello es delgado y largo; el torax es alargado y estrecho, especialmente en el diametro anteroposterior, los espacios intercostales son amplios y el angulo epigastrico es agudo.</p>
+      <p>El diafragma es bajo lo que determina un pediculo vascular y un corazon verticalizados. Es mayor la distancia entre la fosa supraesternal y el apendice xifoides que la distancia entre este y el ombligo. El estomago esta en posicion vertical hacia la izquierda de la linea media. El higado tambien se encuentra verticalizado.</p>
+    </div>
+    <div class="content-block">
+      <h4>Brevilineo (Picnico)</h4>
+      <p>La talla es menor a la envergadura; la cabeza es braquicefalica (diametro transverso mayor que el anteroposterior), el cuello es corto y grueso. El torax es ancho, con espacios intercostales estrechos. El diafragma es alto, lo que determina una posicion horizontal del corazon.</p>
+      <p>La distancia entre la fosa supraesternal y el apendice xifoides es menor que la distancia entre este y el ombligo. El angulo epigastrico es obtuso. El estomago y el higado se encuentran horizontalizados.</p>
+    </div>
+    <div class="content-block">
+      <h4>Normolineo (Atletico)</h4>
+      <p>La talla es igual a la envergadura. El angulo epigastrico es recto. La distancia entre la fosa supraesternal y el apendice xifoides es igual a la distancia entre este y el ombligo.</p>
+    </div>
+  </div>
+
+  <!-- ==================== 3. FACIES ==================== -->
+  <div class="section" id="facies">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 3 de 20</div>
+      <h2>Facies</h2>
+      <p>Apariencia general de la cara que revela patologias especificas</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Es el conjunto de datos manifestados en la cara, como resultado de caracteristicas anatomicas y de la expresion fisionomica. Corresponde a la apariencia general de la cara y revela en muchas ocasiones patologias especificas.</p>
+      <p><em>"En la cara se reflejan las reacciones provocadas por el mundo exterior (miedo, repugnancia, etc.), asi como las excitaciones originadas en el propio individuo (alegria, preocupacion, tristeza, etc.) o en trastornos funcionales de las visceras por daño de diferente indole."</em> &mdash; Suris</p>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de facies</h4>
+      <div class="facies-grid">
+        <div class="facies-card"><strong>Mixedematosa</strong><span>Abotagada, parpados edematosos, labios y lengua agrandados, piel seca y aspera, color cera.</span></div>
+        <div class="facies-card"><strong>Cretinismo</strong><span>Labios gruesos, lengua aumentada y fuera de la boca, parpados engrosados, frente arrugada, cabello seco y quebradizo, puente nasal hundido.</span></div>
+        <div class="facies-card"><strong>Hipertiroidismo</strong><span>Exoftalmos con aumento de la hendidura palpebral (mirada de susto), bocio, danza carotidea.</span></div>
+        <div class="facies-card"><strong>Acromegalia</strong><span>Aumento del tamaño del craneo y del maxilar inferior, hipertrofia de orejas, nariz y labios.</span></div>
+        <div class="facies-card"><strong>Sindrome de Cushing</strong><span>Cara de luna llena. Pletorica, papada submentoniana, coloracion rojo cianotica, boca de pescado, frecuentemente acne.</span></div>
+        <div class="facies-card"><strong>Paralisis facial periferica</strong><span>Asimetria facial, imposibilidad para cerrar el ojo, perdida de arrugas frontales, aplanamiento del surco nasogeniano, desviacion de la comisura labial al lado sano.</span></div>
+        <div class="facies-card"><strong>Leonina</strong><span>Lepra. Infiltracion subcutanea del puente nasal, barbilla y mejillas; nariz aplanada y ensanchada.</span></div>
+        <div class="facies-card"><strong>Hipocratica</strong><span>Pacientes moribundos/deshidratados. Nariz afilada, ojos y sienes hundidos, orejas contraidas, color plomizo.</span></div>
+        <div class="facies-card"><strong>Renal</strong><span>Edema principalmente alrededor de los ojos, piel palida.</span></div>
+        <div class="facies-card"><strong>Mongoloide</strong><span>Abertura palpebral estrecha (epicanto), ojos oblicuos y separados, rostro redondo, boca entreabierta.</span></div>
+        <div class="facies-card"><strong>Enfermedad de Parkinson</strong><span>Expresion inmovil (hipomimia).</span></div>
+        <div class="facies-card"><strong>Esclerodermia</strong><span>Nariz afilada, piel tensa y brillante, abertura bucal angosta, hiperpigmentacion y areas de vitiligo.</span></div>
+        <div class="facies-card"><strong>Miastenica</strong><span>Ptosis palpebral que se acentua en el dia, ojos inmoviles, cabeza inclinada hacia atras, expresion somnolienta.</span></div>
+        <div class="facies-card"><strong>Enfermedad de Addison</strong><span>Pigmentacion oscura que contrasta con escleras y dientes blancos, ojos hundidos, cabello fino y seco, vello escaso.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== 4. CAMBIOS COLORACION ==================== -->
+  <div class="section" id="cambios">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 4 de 20</div>
+      <h2>Cambios en la Coloracion de la Piel</h2>
+      <p>Palidez, rubicundez, cianosis e ictericia</p>
+    </div>
+
+    <div class="content-block">
+      <h4>Palidez</h4>
+      <p>Atenuacion o disminucion del color rosado de la piel. En personas de raza negra se evidencia en palmas y plantas.</p>
+      <dl class="def-list">
+        <dt>Localizada o segmentaria</dt><dd>Causada por isquemia en alguna zona.</dd>
+        <dt>Generalizada</dt><dd>Producida por disminucion de eritrocitos circulantes en la microcirculacion cutanea y subcutanea. Puede ocurrir por disminucion verdadera del numero de eritrocitos o por vasoconstriccion generalizada (emociones intensas, dolor extremo, sincope, shock).</dd>
+      </dl>
+    </div>
+
+    <div class="content-block">
+      <h4>Rubicundez</h4>
+      <p>Aumento del color rosado de la piel por aumento del volumen sanguineo o por vasodilatacion.</p>
+      <dl class="def-list">
+        <dt>Generalizada</dt><dd>Escarlatina, eritrodermia, fiebre, policitemias, exposicion a radiacion solar.</dd>
+        <dt>Localizada</dt><dd>Fenomenos vasomotores (fugaz) o inflamacion, eritema palmar en hepatopatias cronicas (duradera).</dd>
+      </dl>
+    </div>
+
+    <div class="content-block">
+      <h4>Cianosis</h4>
+      <p>Color azul de la piel causado por aumento de hemoglobina reducida a &ge; 5 gr/100ml (umbral de cianosis).</p>
+      <dl class="def-list">
+        <dt>Cianosis central</dt><dd>Disminucion de la saturacion arterial de oxigeno; patologias con alteracion del intercambio gaseoso, cortocircuitos anatomicos, alteraciones de hemoglobina. Se evidencia en <strong>piel y mucosas</strong>.</dd>
+        <dt>Cianosis periferica</dt><dd>Perdida excesiva de oxigeno en red capilar por estasis venosa o disminucion del calibre de la microcirculacion. Insuficiencia cardiaca, shock, exposicion al frio. Solo en partes distales, nariz, orejas y region peribucal. <strong>No compromete mucosas</strong>.</dd>
+        <dt>Cianosis mixta</dt><dd>Factores de cianosis central y periferica combinados, como en Cor pulmonar.</dd>
+      </dl>
+    </div>
+
+    <div class="content-block">
+      <h4>Ictericia</h4>
+      <p>Coloracion amarilla de piel, mucosas visibles y esclerotica debida a acumulacion de bilirrubina en sangre. Se debe diferenciar de carotinemia (alto consumo de zanahoria o tomate), donde la piel pero no las mucosas presentan color amarillo.</p>
+      <p>Puede ser producida por: hemolisis, enfermedades hepaticas u obstruccion de vias biliares extrahepaticas.</p>
+    </div>
+  </div>
+
+  <!-- ==================== 5. MOVIMIENTOS INVOLUNTARIOS ==================== -->
+  <div class="section" id="movimientos">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 5 de 20</div>
+      <h2>Movimientos Involuntarios</h2>
+      <p>Movimientos realizados sin la intervencion de la voluntad</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Pueden ser producidos por trastornos funcionales o lesiones del sistema nervioso. Para definirlos se debe tener en cuenta: segmento corporal comprometido, extension y distribucion, ritmo, duracion, velocidad y amplitud.</p>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de movimientos involuntarios</h4>
+      <dl class="def-list">
+        <dt>Temblores</dt><dd>Movimientos alternados, regulares y rapidos de la porcion distal de los miembros. Pueden ser: de reposo, intencionales o posturales.</dd>
+        <dt>Corea</dt><dd>Movimientos amplios, desordenados, inesperados, arritmicos, sin finalidad aparente. Comprometen generalmente cara, miembros superiores e inferiores.</dd>
+        <dt>Atetosis</dt><dd>Movimientos lentos, estereotipados, reptiformes, de los segmentos distales de las extremidades.</dd>
+        <dt>Hemibalismo</dt><dd>Movimientos bruscos, violentos, de gran amplitud y rapidos.</dd>
+        <dt>Mioclonias</dt><dd>Contracciones musculares breves, ritmicas o arritmicas, localizadas o difusas de un musculo o grupo muscular.</dd>
+        <dt>Tics</dt><dd>Movimientos de un grupo muscular que se repiten sucesivamente.</dd>
+        <dt>Fasciculaciones</dt><dd>Contracciones breves, arritmicas de un haz muscular.</dd>
+        <dt>Distonia</dt><dd>Aumento anormal del tono muscular que produce posicion fija; se incrementa con actividad volitiva, ansiedad o estres y tiende a desaparecer con el sueño.</dd>
+        <dt>Convulsiones</dt><dd>Movimientos subitos, incoordinados, paroxisticos, segmentarios o generalizados. Pueden ser tonicas, clonicas o tonico-clonicas.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 6. ACTITUD O POSTURA ==================== -->
+  <div class="section" id="actitud">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 6 de 20</div>
+      <h2>Actitud o Postura</h2>
+      <p>Posicion adoptada consciente o inconscientemente para aliviar una molestia o dolor</p>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de decubito</h4>
+      <dl class="def-list">
+        <dt>Decubito pasivo</dt><dd>El paciente es incapaz de variar la posicion por su propia voluntad, se encuentra flacido. Se observa en pacientes inconscientes o con paralisis muscular.</dd>
+        <dt>Decubito activo indiferente</dt><dd>El paciente puede adoptar indistintamente cualquier posicion.</dd>
+        <dt>Decubito activo obligado</dt><dd>El paciente adopta una posicion y cualquier intento por modificarla incrementa de manera importante sus sintomas.</dd>
+      </dl>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de decubito activo</h4>
+      <dl class="def-list">
+        <dt>Decubito dorsal o supino</dt><dd>Inmovil con dorso apoyado. Peritonitis, fracturas de columna, distension abdominal, ascitis.</dd>
+        <dt>Decubito ventral o prono</dt><dd>Afecciones dolorosas intestinales y de vias biliares tipo colico.</dd>
+        <dt>Decubito lateral</dt><dd>Afecciones respiratorias: dolor pleural se acuestan sobre lado sano; disminucion de espacio respiratorio sin dolor se acuestan sobre lado afectado. Cardiomegalia: decubito lateral derecho.</dd>
+        <dt>Posicion genupectoral o plegaria mahometana</dt><dd>Sentado con tronco inclinado adelante y manos apoyadas. Pericarditis con derrame.</dd>
+        <dt>Opistotonos</dt><dd>Apoyado sobre cabeza y pies, curvatura dorsal con musculos dorsales contraidos.</dd>
+        <dt>Pleurotonos</dt><dd>Tronco flexionado hacia un lado por contractura unilateral.</dd>
+        <dt>Emprostotonos</dt><dd>Curvado hacia delante, con cabeza y muslos flexionados.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 7. MARCHA ==================== -->
+  <div class="section" id="marcha">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 7 de 20</div>
+      <h2>Marcha</h2>
+      <p>Evaluacion del modo de caminar y sostenerse en pie</p>
+    </div>
+    <div class="content-block">
+      <h4>Que observar</h4>
+      <p><em>"El modo como los enfermos se sostienen en pie y su forma de caminar ponen de manifiesto no solo el estado general del individuo sino tambien la coordinacion de factores oseos, articulares, musculares y neurologicos"</em> &mdash; Suris, 1978.</p>
+      <p>Se deben evaluar: velocidad, direccion, simetria de las fases, base de sustentacion, direccion de los pies, altura y longitud de los pasos, postura, balanceo de los brazos, movimientos de la pelvis.</p>
+    </div>
+    <div class="content-block">
+      <h4>Marchas patologicas</h4>
+      <dl class="def-list">
+        <dt>Marcha hemiplejica (del segador)</dt><dd>Cuerpo apoyado sobre miembro sano, miembro afectado rigido y en extension con movimientos helicoidales. Miembro superior adherido al tronco con antebrazo en flexion.</dd>
+        <dt>Marcha ataxica (tabetica)</dt><dd>Camina mirando sus miembros inferiores, pasos exagerados, base de sustentacion aumentada, apoyo fuerte del pie. Empeora en oscuridad y al cerrar ojos. Compromiso de cordones posteriores.</dd>
+        <dt>Marcha cerebelosa (de ebrio)</dt><dd>Vacilante, base amplia, desequilibrio con desviacion lateral. Brazos extendidos y en abduccion, pasos asimetricos. <strong>No empeora al cerrar ojos</strong>.</dd>
+        <dt>Marcha parkinsoniana</dt><dd>Dificultad para iniciar, cuerpo rigido e inclinado adelante, pasos cortos sin braceo. Pasos cada vez mas rapidos (propulsion), incapacidad para detenerse (festinacion). Puede haber retropulsion.</dd>
+        <dt>Marcha estepante o paretica</dt><dd>Paralisis de extensores del pie. Pie caido, el paciente levanta exageradamente la rodilla, apoya primero la punta y luego parte externa y talon. Semeja paso de caballo.</dd>
+        <dt>Marcha miopatica (de pato)</dt><dd>Compromiso de musculos de cintura pelviana. Aumento de lordosis lumbar, pelvis oscila lateralmente al levantar cada extremidad.</dd>
+        <dt>Marcha en tijeras</dt><dd>Paraplejia espastica. Hipertonia de aductores, muslos se rozan al caminar, pasos cortos.</dd>
+        <dt>Marcha magnetica o apraxica</dt><dd>Inclinacion del tronco adelante, flexion de brazos y rodillas, pies separados, pasos arrastrados. Hidrocefalia a presion normal, enfermedades de lobulos frontales.</dd>
+        <dt>Marcha antalgica</dt><dd>Dolor en una extremidad: pasos cortos, disminucion del tiempo de apoyo sobre el miembro comprometido.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 8. ESTADO DE CONCIENCIA ==================== -->
+  <div class="section" id="conciencia">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 8 de 20</div>
+      <h2>Estado de Conciencia</h2>
+      <p>Percepcion de si mismo y del ambiente y capacidad de reaccion a estimulos</p>
+    </div>
+    <div class="content-block">
+      <h4>Definicion</h4>
+      <p><em>"Estado de percepcion momentanea del paciente de si mismo y del ambiente y su capacidad de reaccion a la estimulacion externa y las necesidades internas"</em> &mdash; Adams, 2000.</p>
+    </div>
+    <div class="content-block">
+      <h4>Niveles de conciencia</h4>
+      <dl class="def-list">
+        <dt>Alerta</dt><dd>Completa reaccion ante estimulos. Percepcion normal de si mismo y del ambiente.</dd>
+        <dt>Somnolencia</dt><dd>Disminucion del estado de alerta. Sueño ligero. Responde a estimulos por periodos cortos.</dd>
+        <dt>Estupor</dt><dd>Parece dormido, despierta solamente ante estimulos vigorosos.</dd>
+        <dt>Coma superficial</dt><dd>Parece dormido, incapaz de despertarse. Responde a estimulos de dolor profundo. Conserva tono muscular y reflejos pupilares, de deglucion y osteotendinosos.</dd>
+        <dt>Coma profundo</dt><dd>No responde a estimulos. Perdida de reflejos pupilares, de deglucion y osteotendinosos. Tono muscular disminuido en forma generalizada.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 9. ORIENTACION ==================== -->
+  <div class="section" id="orientacion">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 9 de 20</div>
+      <h2>Orientacion</h2>
+      <p>Capacidad para reconocerse y ubicarse en tiempo, espacio y persona</p>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de orientacion</h4>
+      <dl class="def-list">
+        <dt>Orientacion en tiempo</dt><dd>Conocimiento del año, mes, dia de la semana, hora aproximada del dia (mañana, tarde, noche).</dd>
+        <dt>Orientacion en espacio</dt><dd>Ubicacion del lugar donde se encuentra, de la ciudad, del pais.</dd>
+        <dt>Orientacion en persona</dt><dd>Conocimiento de su nombre, de su profesion y de su historia personal.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 10. ESTADO DE ANIMO ==================== -->
+  <div class="section" id="animo">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 10 de 20</div>
+      <h2>Estado de Animo</h2>
+      <p>Componente subjetivo y objetivo del estado emocional del paciente</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Tiene un componente subjetivo (como se siente la persona) y un componente objetivo (como lo ve el examinador). Se describe el estado emocional que predomino durante la evaluacion, determinado por la expresion facial, inflexiones de la voz, actitud, posicion de labios, direccion de la mirada, expresion de los ojos y el vestido.</p>
+    </div>
+    <div class="content-block">
+      <h4>Estados de animo</h4>
+      <dl class="def-list">
+        <dt>Depresion</dt><dd>Quietud, retardo en el habla o mutismo, mirada al piso, llanto facil, suspiros, descuido en el vestir.</dd>
+        <dt>Ansiedad</dt><dd>Inquietud, exaltacion sin motivo real, mirada inquieta, manos apretadas, lenguaje atropellado, risa "nerviosa", sudoracion de axilas y manos.</dd>
+        <dt>Exaltacion</dt><dd>Hipomania o mania con hiperactividad, habla apresurada.</dd>
+        <dt>Enojo</dt><dd>Mirada fija y dura, perdida del sentido del humor, exigencia permanente de explicaciones, indagacion sobre titulos y experiencia del medico.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 11. NUTRICION ==================== -->
+  <div class="section" id="nutricion">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 11 de 20</div>
+      <h2>Estado Aparente de Nutricion</h2>
+      <p>Observacion de grasa corporal, masa muscular y presencia de edema</p>
+    </div>
+    <div class="content-block">
+      <h4>Desnutricion</h4>
+      <p>Disminucion de la masa muscular. Atrofia de musculos temporales. Piel seca y agrietada. Caida del cabello y vello corporal. Edema.</p>
+    </div>
+    <div class="content-block">
+      <h4>Caquexia</h4>
+      <p>Grado mas avanzado de desnutricion. Piel palida, seca y fina. Globos oculares hundidos por desaparicion de la grasa retroorbitaria. Pomulos prominentes y desaparicion de la bola adiposa de Bichat. Prominencia de todos los huesos del cuerpo bajo la piel. Abdomen excavado. Perdida de la redondez de gluteos y amplio espacio entre los aductores del muslo.</p>
+    </div>
+    <div class="content-block">
+      <h4>Obesidad</h4>
+      <p>Aumento de la proporcion de grasa corporal en relacion con los demas componentes.</p>
+      <dl class="def-list">
+        <dt>Tipo androide</dt><dd>Grasa en parte superior: cara, dorso del cuello, hombros, mitad superior del tronco, region epigastrica.</dd>
+        <dt>Tipo ginecoide</dt><dd>Grasa en mitad inferior: region hipogastrica, caderas, muslos. Al aumentar, compromete barbilla, cuello posterior, epigastrio y gluteos.</dd>
+        <dt>Obesidad exogena</dt><dd>Grasa distribuida igualmente en tronco y extremidades.</dd>
+        <dt>Obesidad endogena</dt><dd>Distribucion centripeta: acumulacion en el tronco, extremidades normales. Ejemplo: enfermedad de Cushing.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 12. HIDRATACION ==================== -->
+  <div class="section" id="hidratacion">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 12 de 20</div>
+      <h2>Estado Aparente de Hidratacion</h2>
+      <p>Balance total de liquidos y electrolitos del organismo</p>
+    </div>
+    <div class="content-block">
+      <h4>Signos de deshidratacion</h4>
+      <ul>
+        <li>Piel seca, poco elastica</li>
+        <li>Mucosas secas</li>
+        <li>Ojos hundidos</li>
+        <li>En niños: fontanelas deprimidas</li>
+        <li>Excitacion fisica o abatimiento</li>
+        <li>Estado general comprometido</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 13. OLORES ==================== -->
+  <div class="section" id="olores">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 13 de 20</div>
+      <h2>Olores Anormales</h2>
+      <p>Halitosis, bromhidrosis y olores caracteristicos de intoxicaciones</p>
+    </div>
+    <div class="content-block">
+      <h4>Halitosis</h4>
+      <p>Mal aliento. Se presenta en procesos de la cavidad oral (caries extensa, mala higiene dental, amigdalitis) o trastornos digestivos infecciosos o tumorales. Tambien aliento alcoholico, a cigarrillo u olor a sustancias causa de intoxicacion.</p>
+    </div>
+    <div class="content-block">
+      <h4>Bromhidrosis</h4>
+      <p>Transpiracion fetida. Puede ser producida por ingestion de ciertos alimentos, accion de bacterias sobre productos de secrecion sudoripara en personas con mala higiene, o procesos metabolicos con olores caracteristicos:</p>
+      <ul>
+        <li><strong>Coma cetoacidotico:</strong> Olor a cetona o a manzana</li>
+        <li><strong>Coma uremico:</strong> Olor a urea</li>
+        <li><strong>Intoxicacion alcoholica</strong></li>
+        <li><strong>Intoxicacion por hipoclorito de sodio:</strong> Olor a limpido</li>
+        <li><strong>Intoxicacion por hidrocarburos:</strong> Olor a gasolina</li>
+        <li><strong>Intoxicacion por organofosforados:</strong> Olor a ajo</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 14. DOLOR ==================== -->
+  <div class="section" id="dolor">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 14 de 20</div>
+      <h2>Evidencia de Dolor</h2>
+      <p>Signos observables que evidencian dolor en el paciente</p>
+    </div>
+    <div class="content-block">
+      <h4>Signos de dolor</h4>
+      <p>A pesar de que el dolor es un sintoma eminentemente subjetivo, en la valoracion del paciente se pueden evidenciar los siguientes signos:</p>
+      <ul>
+        <li>Gemidos</li>
+        <li>Movimientos defensivos</li>
+        <li>Midriasis</li>
+        <li>Palidez</li>
+        <li>Entrecejo fruncido</li>
+        <li>Marcha antalgica</li>
+        <li>El paciente toma con las manos el sitio afectado</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 15. DISNEA ==================== -->
+  <div class="section" id="disnea">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 15 de 20</div>
+      <h2>Evidencia de Disnea</h2>
+      <p>Sensacion desagradable de necesidad de aumentar el trabajo respiratorio</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Disnea es la sensacion desagradable de la necesidad de aumentar el trabajo respiratorio, que reemplaza el acto automatico de respirar. Se evidencia por medio de diversos signos clinicos:</p>
+      <ul>
+        <li>Retracciones al momento de la inspiracion en fosa supraesternal, fosas supraclaviculares, epigastrio, espacios intercostales</li>
+        <li>Alteracion en la relacion inspiracion-espiracion (normal 2:3)</li>
+        <li>Asimetria en la amplitud del torax con los movimientos inspiratorios</li>
+        <li>Alteraciones en la frecuencia respiratoria</li>
+        <li><strong>Cornaje:</strong> Ruido inspiratorio sibilante o roncante de tono alto. Patologias de vias aereas superiores</li>
+        <li>Estridor laringeo</li>
+        <li>Sibilancias espiratorias audibles: patologias que provoquen obstruccion de las vias bronquiales</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 16. TOS ==================== -->
+  <div class="section" id="tos">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 16 de 20</div>
+      <h2>Evidencia de Tos</h2>
+      <p>Acto reflejo y en ocasiones voluntario de espiracion brusca</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>La tos es un acto reflejo y en ocasiones voluntario. Consiste en una espiracion brusca, realizada en un comienzo con la glotis cerrada, luego al aumentar la presion esta se abre saliendo el aire con mucha presion, lo que determina el ruido caracteristico.</p>
+    </div>
+    <div class="content-block">
+      <h4>Tipos de tos</h4>
+      <dl class="def-list">
+        <dt>Tos seca</dt><dd>Tos clara que no moviliza secreciones.</dd>
+        <dt>Tos humeda</dt><dd>De timbre grave, burbujosa, que moviliza secreciones. Puede ser productiva o no productiva.</dd>
+        <dt>Tos perruna (seca, espasmódica, ronca, tono bajo)</dt><dd>Afecciones laringeas.</dd>
+        <dt>Tos humeda apagada y debil</dt><dd>Pacientes comprometidos, paresia de musculos respiratorios.</dd>
+        <dt>Tos seca incompleta y dolorosa</dt><dd>Pleuritis.</dd>
+        <dt>Tos afonica</dt><dd>Lesion de cuerdas vocales.</dd>
+        <dt>Tos bitonal</dt><dd>Sonido de tono alto y otro de tono bajo. Paralisis de una cuerda vocal por inflamacion o lesion del nervio laringeo recurrente.</dd>
+        <dt>Tos quintosa</dt><dd>Paroxismos con espiraciones violentas, luego inspiracion profunda y sibilante (reprise). Tos tipica de la tos ferina.</dd>
+        <dt>Tos coqueluchoide</dt><dd>Similar a la quintosa, menos severa, sin reprise ni expectoracion hialina. Sindrome mediastinico.</dd>
+      </dl>
+    </div>
+  </div>
+
+  <!-- ==================== 17. ACTITUD FRENTE A LA ENFERMEDAD ==================== -->
+  <div class="section" id="actitud-enfermedad">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 17 de 20</div>
+      <h2>Actitud Frente a la Enfermedad</h2>
+      <p>Sentimientos y actitudes del paciente ante su enfermedad</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>Ante la presencia de una enfermedad se pueden poner en evidencia sentimientos de rabia, tristeza entre otros, que determinan actitudes de <strong>rechazo, aceptacion, lucha o indiferencia</strong> frente a la misma.</p>
+      <p>Estos sentimientos tienen relacion con:</p>
+      <ul>
+        <li>El significado que tiene la enfermedad para el paciente</li>
+        <li>El impacto emocional que causa en el y su entorno</li>
+        <li>La vision de futuro ante una patologia</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 18. ELEMENTOS EXTERNOS ==================== -->
+  <div class="section" id="presencia">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 18 de 20</div>
+      <h2>Presencia de Elementos Externos</h2>
+      <p>Dispositivos medicos y elementos terapeuticos visibles en el paciente</p>
+    </div>
+    <div class="content-block">
+      <h4>Elementos externos comunes</h4>
+      <ul>
+        <li><strong>Ferulas:</strong> Evitan movilizacion de un segmento corporal en lesiones traumaticas</li>
+        <li><strong>Tubo a torax:</strong> Drenaje pleural para evacuacion de liquido o gas</li>
+        <li><strong>Tubo naso-traqueal u oro-traqueal:</strong> Mantiene via aerea permeable y facilita aspiracion de secreciones</li>
+        <li><strong>Canula de traqueotomia</strong></li>
+        <li><strong>Oxigeno</strong> (canula nasal, mascarilla)</li>
+        <li><strong>Liquidos endovenosos</strong></li>
+        <li><strong>Monitores</strong></li>
+        <li><strong>Sonda nasogastrica</strong></li>
+        <li><strong>Vendajes</strong></li>
+        <li><strong>Cuello ortopedico</strong></li>
+        <li><strong>Cateteres</strong></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 19. EDAD APARENTE ==================== -->
+  <div class="section" id="edad">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 19 de 20</div>
+      <h2>Edad Aparente</h2>
+      <p>Correlacion entre la edad aparente y la edad cronologica</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p><em>"Como, por lo demas, la armonia del exterior permite, al menos hasta cierto punto, deducir el buen funcionamiento de los organos internos, lo mismo puede afirmarse en lo que atañe a la evolucion senil del hombre."</em> &mdash; Risak, 1942</p>
+      <ul>
+        <li>En los <strong>niños</strong>, una edad aparente menor puede estar relacionada con malnutricion o con trastornos hormonales.</li>
+        <li>En los <strong>adolescentes</strong> debe haber correlacion entre el desarrollo puberal con la edad cronologica.</li>
+        <li>En los <strong>adultos</strong> una edad aparente mayor puede dar indicios del impacto fisico que ha causado una patologia organica o funcional.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ==================== 20. ESTADO DE SALUD ==================== -->
+  <div class="section" id="salud">
+    <div class="topic-header">
+      <div class="topic-number">Parametro 20 de 20</div>
+      <h2>Estado Aparente de Salud</h2>
+      <p>Conclusion subjetiva que resulta de unir todos los datos de la apariencia general</p>
+    </div>
+    <div class="content-block">
+      <h4>Descripcion</h4>
+      <p>La determinacion de un buen, regular o mal estado de salud es una <strong>conclusion subjetiva</strong> que resulta de unir todos los datos obtenidos de la apariencia general. Depende en parte de la experiencia del medico que realiza la evaluacion.</p>
+      <p>Tiene utilidad para entender hasta que punto la enfermedad afecta el organismo en su conjunto. Alerta al medico, cuando hay pocos sintomas o signos de una enfermedad especifica, a investigar la causa del deterioro del estado general del paciente.</p>
+      <p>De otra parte, puede ocurrir que un paciente con enfermedad grave conserve un buen estado general, lo que puede indicar una buena capacidad de respuesta del organismo. Por esta razon, <strong>no siempre existe una relacion directa entre el aparente estado de salud y la gravedad de la enfermedad</strong>.</p>
+    </div>
+  </div>
+
+  <!-- ==================== AUTOEVALUACION ==================== -->
+  <div class="section" id="autoevaluacion">
+    <div class="topic-header">
+      <div class="topic-number">Evaluacion</div>
+      <h2>Autoevaluacion</h2>
+      <p>Pon a prueba tus conocimientos sobre la apariencia general</p>
+    </div>
+    <div class="quiz-container" id="quizContainer">
+      <!-- Quiz is rendered by JavaScript -->
+    </div>
+  </div>
+
+  <!-- ==================== BIBLIOGRAFIA ==================== -->
+  <div class="section" id="bibliografia">
+    <div class="topic-header">
+      <div class="topic-number">Referencias</div>
+      <h2>Bibliografia</h2>
+      <p>Fuentes consultadas para la elaboracion de este recurso</p>
+    </div>
+    <div class="content-block">
+      <ul class="bib-list">
+        <li>Bickley, L. S. (2021). <em>Bates' Guide to Physical Examination and History Taking</em> (13th ed.). Wolters Kluwer.</li>
+        <li>DeGowin, R. L., & DeGowin, E. L. (2019). <em>DeGowin's Diagnostic Examination</em> (11th ed.). McGraw-Hill.</li>
+        <li>Sapira, J. D. (2020). <em>Sapira's Art and Science of Bedside Diagnosis</em> (5th ed.). Wolters Kluwer.</li>
+        <li>Suris Batlló, A. (1978). <em>Semiologia Medica y Tecnica Exploratoria</em>. Elsevier.</li>
+        <li>Schaposnik, F. (1988). <em>Semiologia</em>. El Ateneo.</li>
+        <li>Argente, H. A., & Alvarez, M. E. (2013). <em>Semiologia Medica: Fisiopatologia, Semiotecnia y Propedeutica</em> (2da ed.). Editorial Medica Panamericana.</li>
+        <li>Risak, E. (1942). <em>Clinica Propedeutica Medica</em>. Labor.</li>
+        <li>Adams, R. D. (2000). <em>Principios de Neurologia</em>. McGraw-Hill Interamericana.</li>
+        <li>Kanjee, Z., & Tess, A. (2022). Visual diagnosis in medicine: Bridging the gap with digital tools. <em>Academic Medicine</em>, 97(5), 674-679.</li>
+        <li>McGee, S. et al. (2024). Evidence-based physical diagnosis. <em>JAMA Internal Medicine</em>.</li>
+        <li>Lees, A. J. et al. (2024). Digital approaches to teaching clinical examination. <em>Medical Education</em>.</li>
+        <li>Al Kahf, R. et al. (2023). Interactive multimedia for clinical skills training: A systematic review. <em>BMC Medical Education</em>.</li>
+      </ul>
+    </div>
+  </div>
+
+</main>
+
+<!-- ===== Scroll to top ===== -->
+<button class="scroll-top" id="scrollTop" aria-label="Volver arriba">&#8593;</button>
+
+<script src="js/app.js"></script>
+</body>
+</html>

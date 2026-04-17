@@ -1,0 +1,25 @@
+# Build output
+**/bin/
+**/obj/
+SemiologyAtlas/bin-*/
+SemiologyAtlas/obj-*/
+
+# IDE artifacts
+.vs/
+*.user
+*.suo
+.idea/
+
+# NuGet / package cache
+pkg/
+
+# Build logs
+*.log
+
+# Claude config
+.claude/
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

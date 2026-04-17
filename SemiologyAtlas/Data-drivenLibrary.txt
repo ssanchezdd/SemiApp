@@ -1,0 +1,557 @@
+A data-driven animation library will make your semiology app scalable and scientifically accurate. Instead of drawing dozens of animations manually, you define movement models for each neurological sign and drive them with parameters (frequency, amplitude, randomness, decay, etc.).
+
+Below is a starter library of 30 neurological sign animations designed to work with the point-based JSON animation system we discussed. These focus mainly on movement disorders and exam maneuvers, which benefit most from animation.
+
+Core Structure for the Animation Library
+
+Each sign references:
+
+a skeleton model (hand, arm, body, eye, gait)
+
+a motion model
+
+parameters
+
+Example schema:
+
+{
+  "name": "parkinson_rest_tremor",
+  "skeleton": "hand",
+  "motions": [
+    {
+      "point": "index_tip",
+      "type": "oscillation",
+      "axis": "y",
+      "frequency": 5,
+      "amplitude": 3
+    }
+  ]
+}
+Library of 30 Neurological Sign Animations
+Tremor Disorders
+1️⃣ Parkinsonian Rest Tremor
+{
+  "name": "parkinson_rest_tremor",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "thumb_tip", "type": "oscillation", "axis": "y", "frequency": 4.5, "amplitude": 3},
+    {"point": "index_tip", "type": "oscillation", "axis": "y", "frequency": 4.5, "amplitude": 2}
+  ]
+}
+2️⃣ Essential Tremor
+
+Higher frequency and posture dependent.
+
+{
+  "name": "essential_tremor",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "hand_center", "type": "oscillation", "axis": "x", "frequency": 8, "amplitude": 4}
+  ]
+}
+3️⃣ Intention Tremor
+
+Amplitude increases toward target.
+
+{
+  "name": "intention_tremor",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "hand_tip", "type": "increasing_oscillation", "frequency": 4, "amplitude_start": 1, "amplitude_end": 6}
+  ]
+}
+4️⃣ Orthostatic Tremor
+
+Rapid oscillation in legs.
+
+{
+  "name": "orthostatic_tremor",
+  "skeleton": "legs",
+  "motions": [
+    {"point": "knee_left", "type": "oscillation", "frequency": 14, "amplitude": 1},
+    {"point": "knee_right", "type": "oscillation", "frequency": 14, "amplitude": 1}
+  ]
+}
+Hyperkinetic Movement Disorders
+5️⃣ Chorea
+
+Random irregular movement.
+
+{
+  "name": "chorea",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "hand_center", "type": "random_impulse", "amplitude": 5, "interval": 0.4}
+  ]
+}
+6️⃣ Hemiballismus
+{
+  "name": "hemiballismus",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "arm_center", "type": "large_random_throw", "amplitude": 20}
+  ]
+}
+7️⃣ Myoclonus
+{
+  "name": "myoclonus",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "hand_center", "type": "sudden_impulse", "amplitude": 6, "interval": 1}
+  ]
+}
+8️⃣ Asterixis
+{
+  "name": "asterixis",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "wrist", "type": "drop_and_recover", "amplitude": 10, "interval": 1.2}
+  ]
+}
+9️⃣ Dystonia
+{
+  "name": "dystonia",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "hand_center", "type": "sustained_rotation", "angle": 25, "duration": 3}
+  ]
+}
+🔟 Tics
+{
+  "name": "motor_tic",
+  "skeleton": "face",
+  "motions": [
+    {"point": "eye_left", "type": "blink", "interval": 2}
+  ]
+}
+Parkinsonian Signs
+11️⃣ Bradykinesia Finger Tap
+{
+  "name": "finger_tap_bradykinesia",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "index_tip", "type": "tap", "frequency": 2, "decay": true}
+  ]
+}
+12️⃣ Pill Rolling Tremor
+{
+  "name": "pill_rolling",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "thumb_tip", "type": "circular_motion", "radius": 3, "frequency": 4}
+  ]
+}
+13️⃣ Cogwheel Rigidity (exam simulation)
+{
+  "name": "cogwheel_rigidity",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "elbow", "type": "step_resistance", "steps": 6}
+  ]
+}
+14️⃣ Parkinsonian Gait
+{
+  "name": "parkinson_gait",
+  "skeleton": "body",
+  "motions": [
+    {"point": "step_length", "type": "short_stride", "length": 10},
+    {"point": "arm_swing", "type": "reduced", "amplitude": 1}
+  ]
+}
+15️⃣ Freezing of Gait
+{
+  "name": "gait_freezing",
+  "skeleton": "body",
+  "motions": [
+    {"point": "foot_left", "type": "halt", "duration": 2}
+  ]
+}
+Coordination Tests
+16️⃣ Finger-to-Nose Test
+{
+  "name": "finger_to_nose",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "hand_tip", "type": "target_move", "targets": ["nose", "finger"]}
+  ]
+}
+17️⃣ Dysmetria
+{
+  "name": "dysmetria",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "hand_tip", "type": "overshoot", "amplitude": 8}
+  ]
+}
+18️⃣ Rapid Alternating Movements
+{
+  "name": "dysdiadochokinesia",
+  "skeleton": "hand",
+  "motions": [
+    {"point": "hand_center", "type": "alternating_rotation", "frequency": 3}
+  ]
+}
+Reflex Signs
+19️⃣ Babinski Sign
+{
+  "name": "babinski",
+  "skeleton": "foot",
+  "motions": [
+    {"point": "big_toe", "type": "extension", "angle": 25}
+  ]
+}
+20️⃣ Clonus
+{
+  "name": "ankle_clonus",
+  "skeleton": "foot",
+  "motions": [
+    {"point": "foot_tip", "type": "oscillation", "frequency": 7}
+  ]
+}
+Eye Signs
+21️⃣ Nystagmus
+{
+  "name": "horizontal_nystagmus",
+  "skeleton": "eyes",
+  "motions": [
+    {"point": "eye_center", "type": "fast_slow_oscillation", "frequency": 3}
+  ]
+}
+22️⃣ Internuclear Ophthalmoplegia
+{
+  "name": "ino",
+  "skeleton": "eyes",
+  "motions": [
+    {"point": "eye_left", "type": "adduction_limit"}
+  ]
+}
+Gait Disorders
+23️⃣ Ataxic Gait
+{
+  "name": "ataxic_gait",
+  "skeleton": "body",
+  "motions": [
+    {"point": "center_mass", "type": "side_sway", "amplitude": 10}
+  ]
+}
+24️⃣ Steppage Gait
+{
+  "name": "steppage_gait",
+  "skeleton": "legs",
+  "motions": [
+    {"point": "knee", "type": "high_step"}
+  ]
+}
+25️⃣ Hemiplegic Gait
+{
+  "name": "hemiplegic_gait",
+  "skeleton": "body",
+  "motions": [
+    {"point": "leg_right", "type": "circumduction"}
+  ]
+}
+Muscle Tone Signs
+26️⃣ Spasticity
+{
+  "name": "spasticity",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "elbow", "type": "velocity_resistance"}
+  ]
+}
+27️⃣ Flaccidity
+{
+  "name": "flaccid_drop",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "arm", "type": "gravity_drop"}
+  ]
+}
+Postural Signs
+28️⃣ Romberg Test
+{
+  "name": "romberg",
+  "skeleton": "body",
+  "motions": [
+    {"point": "center_mass", "type": "increasing_sway"}
+  ]
+}
+29️⃣ Pronator Drift
+{
+  "name": "pronator_drift",
+  "skeleton": "arm",
+  "motions": [
+    {"point": "hand", "type": "slow_rotation", "angle": 15}
+  ]
+}
+30️⃣ Wing-Beating Tremor
+{
+  "name": "wing_beating",
+  "skeleton": "arms",
+  "motions": [
+    {"point": "elbow", "type": "large_oscillation", "frequency": 3}
+  ]
+}
+Why This System Is Powerful
+
+You now have a procedural animation system where you can adjust parameters to simulate real physiology.
+
+For example:
+
+frequency = 4–6 Hz → Parkinson tremor
+frequency = 8–12 Hz → Essential tremor
+
+You could even make a teaching slider:
+
+frequency slider → tremor changes
+
+Students would immediately understand clinical differences.
+
+1️⃣ Hand skeleton (~25 joints) for tremor, finger tapping, Babinski hand tests, etc.
+2️⃣ Body skeleton for gait for Parkinsonian gait, ataxia, hemiplegic gait, etc.
+
+Both are designed to work with the JSON animation system we discussed, where your MAUI renderer draws lines between joints and the animation engine modifies the joint positions.
+
+1️⃣ Hand Skeleton (25 Joints)
+
+This skeleton focuses on movement disorders and neurological exams.
+
+Joint Map
+                index_tip
+                   |
+thumb_tip     index_dip
+    |              |
+thumb_ip      index_pip
+    |              |
+thumb_mcp      index_mcp
+      \           /
+         palm_center
+              |
+            wrist
+              |
+           forearm
+
+The full model includes all fingers.
+
+JSON Definition
+{
+  "skeleton": "hand",
+  "joints": {
+    "forearm": [0, 120],
+    "wrist": [0, 100],
+
+    "palm_center": [0, 80],
+
+    "thumb_mcp": [-20, 70],
+    "thumb_ip": [-30, 55],
+    "thumb_tip": [-35, 40],
+
+    "index_mcp": [-10, 60],
+    "index_pip": [-10, 45],
+    "index_dip": [-10, 30],
+    "index_tip": [-10, 15],
+
+    "middle_mcp": [0, 60],
+    "middle_pip": [0, 40],
+    "middle_dip": [0, 25],
+    "middle_tip": [0, 10],
+
+    "ring_mcp": [10, 60],
+    "ring_pip": [10, 45],
+    "ring_dip": [10, 30],
+    "ring_tip": [10, 15],
+
+    "pinky_mcp": [20, 65],
+    "pinky_pip": [25, 50],
+    "pinky_dip": [30, 35],
+    "pinky_tip": [35, 20]
+  },
+
+  "bones": [
+    ["forearm", "wrist"],
+    ["wrist", "palm_center"],
+
+    ["palm_center", "thumb_mcp"],
+    ["thumb_mcp", "thumb_ip"],
+    ["thumb_ip", "thumb_tip"],
+
+    ["palm_center", "index_mcp"],
+    ["index_mcp", "index_pip"],
+    ["index_pip", "index_dip"],
+    ["index_dip", "index_tip"],
+
+    ["palm_center", "middle_mcp"],
+    ["middle_mcp", "middle_pip"],
+    ["middle_pip", "middle_dip"],
+    ["middle_dip", "middle_tip"],
+
+    ["palm_center", "ring_mcp"],
+    ["ring_mcp", "ring_pip"],
+    ["ring_pip", "ring_dip"],
+    ["ring_dip", "ring_tip"],
+
+    ["palm_center", "pinky_mcp"],
+    ["pinky_mcp", "pinky_pip"],
+    ["pinky_pip", "pinky_dip"],
+    ["pinky_dip", "pinky_tip"]
+  ]
+}
+Signs This Skeleton Supports
+
+This one skeleton can animate:
+
+• Parkinson tremor
+• Pill-rolling tremor
+• Essential tremor
+• Finger tapping bradykinesia
+• Dysdiadochokinesia
+• Asterixis
+• Myoclonus
+• Chorea
+
+2️⃣ Body Skeleton for Gait
+
+This skeleton focuses on neurological gait abnormalities.
+
+Joint Layout
+        head
+         |
+       neck
+         |
+       spine
+         |
+       pelvis
+      /     \
+ hip_l       hip_r
+  |            |
+knee_l       knee_r
+  |            |
+ankle_l      ankle_r
+  |            |
+foot_l       foot_r
+JSON Definition
+{
+  "skeleton": "body",
+  "joints": {
+
+    "head": [0, 200],
+    "neck": [0, 180],
+
+    "spine_upper": [0, 150],
+    "spine_lower": [0, 120],
+
+    "pelvis": [0, 100],
+
+    "hip_left": [-20, 100],
+    "knee_left": [-20, 60],
+    "ankle_left": [-20, 20],
+    "foot_left": [-20, 0],
+
+    "hip_right": [20, 100],
+    "knee_right": [20, 60],
+    "ankle_right": [20, 20],
+    "foot_right": [20, 0]
+  },
+
+  "bones": [
+    ["head", "neck"],
+    ["neck", "spine_upper"],
+    ["spine_upper", "spine_lower"],
+    ["spine_lower", "pelvis"],
+
+    ["pelvis", "hip_left"],
+    ["hip_left", "knee_left"],
+    ["knee_left", "ankle_left"],
+    ["ankle_left", "foot_left"],
+
+    ["pelvis", "hip_right"],
+    ["hip_right", "knee_right"],
+    ["knee_right", "ankle_right"],
+    ["ankle_right", "foot_right"]
+  ]
+}
+Gait Disorders You Can Animate
+
+With this skeleton you can simulate:
+
+Parkinsonian gait
+
+reduced arm swing
+
+short steps
+
+forward posture
+
+Ataxic gait
+
+wide base
+
+lateral sway
+
+Hemiplegic gait
+
+circumduction
+
+Steppage gait
+
+exaggerated knee lift
+
+Freezing of gait
+
+halted step cycle
+
+Example Parkinson Gait Animation JSON
+{
+  "animation": "parkinson_gait",
+  "motions": [
+
+    {
+      "point": "spine_upper",
+      "type": "forward_lean",
+      "angle": 10
+    },
+
+    {
+      "point": "knee_left",
+      "type": "step_cycle",
+      "amplitude": 10,
+      "frequency": 1
+    },
+
+    {
+      "point": "knee_right",
+      "type": "step_cycle",
+      "amplitude": 10,
+      "phase": 180
+    }
+  ]
+}
+How Your Renderer Would Work
+
+1️⃣ Load skeleton JSON
+2️⃣ Draw bones between joints
+3️⃣ Apply animation rules each frame
+
+Example loop:
+
+foreach(var motion in motions)
+{
+    ApplyMotion(motion, time);
+}
+Why This Is Extremely Powerful for Your App
+
+With just two skeletons, you can animate dozens of semiological signs.
+
+You only change parameters like:
+
+frequency
+amplitude
+phase
+randomness
+decay
+
+This lets students visually learn the difference between:
+
+• Parkinson tremor vs essential tremor
+• Ataxic vs hemiplegic gait
+• Chorea vs myoclonus

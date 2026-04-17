@@ -1,0 +1,912 @@
+{
+  "profiles": [
+    {
+      "key": "general_survey",
+      "skeletons": [
+        {
+          "id": "patient",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 58],
+            "shoulder_left": [130, 78],
+            "wrist_left": [114, 148],
+            "sternum": [160, 92],
+            "abdomen": [160, 126],
+            "shoulder_right": [190, 78],
+            "wrist_right": [206, 148]
+          },
+          "bones": [
+            ["neck", "shoulder_left"],
+            ["shoulder_left", "wrist_left"],
+            ["neck", "sternum"],
+            ["sternum", "abdomen"],
+            ["neck", "shoulder_right"],
+            ["shoulder_right", "wrist_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 34],
+          "radius": 18,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        },
+        {
+          "id": "scope_left",
+          "kind": "polyline",
+          "points": [[148, 70], [138, 92], [144, 118]],
+          "stroke": "#2FA7A0",
+          "strokeWidth": 4
+        },
+        {
+          "id": "scope_right",
+          "kind": "polyline",
+          "points": [[172, 70], [182, 92], [176, 118]],
+          "stroke": "#2FA7A0",
+          "strokeWidth": 4
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "targets": ["patient:sternum", "patient:abdomen"],
+          "axis": "y",
+          "amplitude": 2.4,
+          "frequency": 0.24
+        },
+        {
+          "type": "oscillation",
+          "targets": ["patient:shoulder_left", "patient:wrist_left", "patient:shoulder_right", "patient:wrist_right"],
+          "axis": "x",
+          "amplitude": 2.2,
+          "frequency": 0.18,
+          "phase": 90
+        }
+      ]
+    },
+    {
+      "key": "neurologic_screen",
+      "skeletons": [
+        {
+          "id": "exam",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 42],
+            "sternum": [160, 68],
+            "pelvis": [160, 108],
+            "wrist_right": [194, 116],
+            "hip_left": [148, 108],
+            "ankle_left": [140, 186],
+            "foot_left": [134, 198],
+            "hip_right": [172, 108],
+            "ankle_right": [180, 186],
+            "foot_right": [186, 198]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["sternum", "pelvis"],
+            ["pelvis", "hip_left"],
+            ["hip_left", "ankle_left"],
+            ["ankle_left", "foot_left"],
+            ["pelvis", "hip_right"],
+            ["hip_right", "ankle_right"],
+            ["ankle_right", "foot_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 24],
+          "radius": 16,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        },
+        {
+          "id": "hammer_handle",
+          "kind": "line",
+          "start": [114, 126],
+          "end": [132, 154],
+          "stroke": "#F26C3D",
+          "strokeWidth": 5
+        },
+        {
+          "id": "hammer_head",
+          "kind": "circle",
+          "center": [108, 120],
+          "radius": 7,
+          "stroke": "#F26C3D",
+          "fill": "#FFD6C6",
+          "strokeWidth": 3
+        }
+      ],
+      "motions": [
+        {
+          "type": "tap_decay",
+          "target": "exam:wrist_right",
+          "axis": "y",
+          "amplitude": 10,
+          "amplitudeEnd": 4,
+          "frequency": 2.2
+        },
+        {
+          "type": "oscillation",
+          "targets": ["exam:ankle_left", "exam:foot_left"],
+          "axis": "x",
+          "amplitude": 5,
+          "frequency": 0.8
+        },
+        {
+          "type": "oscillation",
+          "targets": ["exam:ankle_right", "exam:foot_right"],
+          "axis": "x",
+          "amplitude": 5,
+          "frequency": 0.8,
+          "phase": 180
+        }
+      ]
+    },
+    {
+      "key": "cardio_clues",
+      "skeletons": [
+        {
+          "id": "patient",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 58],
+            "sternum": [160, 92],
+            "abdomen": [160, 126],
+            "heart": [148, 100],
+            "ankle_left": [144, 188],
+            "ankle_right": [176, 188]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["sternum", "abdomen"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 34],
+          "radius": 18,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        },
+        {
+          "id": "jugular",
+          "kind": "polyline",
+          "points": [[170, 48], [182, 66], [184, 92]],
+          "stroke": "#2FA7A0",
+          "strokeWidth": 4
+        },
+        {
+          "id": "heart_ring",
+          "kind": "circle",
+          "center": [148, 100],
+          "radius": 11,
+          "stroke": "#F26C3D",
+          "fill": "#FFE1D6",
+          "strokeWidth": 3
+        },
+        {
+          "id": "edema_left",
+          "kind": "ellipse",
+          "center": [144, 188],
+          "width": 22,
+          "height": 12,
+          "stroke": "#2FA7A0",
+          "fill": "#D6F3F1",
+          "strokeWidth": 3,
+          "opacity": 0.7
+        },
+        {
+          "id": "edema_right",
+          "kind": "ellipse",
+          "center": [176, 188],
+          "width": 22,
+          "height": 12,
+          "stroke": "#2FA7A0",
+          "fill": "#D6F3F1",
+          "strokeWidth": 3,
+          "opacity": 0.7
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "target": "patient:heart",
+          "axis": "circle",
+          "amplitudeX": 1.8,
+          "amplitudeY": 1.2,
+          "frequency": 1.2
+        },
+        {
+          "type": "oscillation",
+          "targets": ["patient:sternum", "patient:abdomen"],
+          "axis": "y",
+          "amplitude": 1.5,
+          "frequency": 0.24
+        }
+      ]
+    },
+    {
+      "key": "resp_pattern",
+      "skeletons": [
+        {
+          "id": "thorax",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 56],
+            "shoulder_left": [128, 76],
+            "flank_left": [138, 116],
+            "sternum": [160, 92],
+            "abdomen": [160, 126],
+            "flank_right": [182, 116],
+            "shoulder_right": [192, 76]
+          },
+          "bones": [
+            ["neck", "shoulder_left"],
+            ["shoulder_left", "flank_left"],
+            ["neck", "sternum"],
+            ["sternum", "abdomen"],
+            ["neck", "shoulder_right"],
+            ["shoulder_right", "flank_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 32],
+          "radius": 18,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        },
+        {
+          "id": "lung_left",
+          "kind": "ellipse",
+          "center": [144, 98],
+          "width": 40,
+          "height": 64,
+          "stroke": "#2FA7A0",
+          "fill": "#D6F3F1",
+          "strokeWidth": 3,
+          "opacity": 0.55
+        },
+        {
+          "id": "lung_right",
+          "kind": "ellipse",
+          "center": [176, 98],
+          "width": 40,
+          "height": 64,
+          "stroke": "#2FA7A0",
+          "fill": "#D6F3F1",
+          "strokeWidth": 3,
+          "opacity": 0.55
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "targets": ["thorax:shoulder_left", "thorax:shoulder_right"],
+          "axis": "y",
+          "amplitude": 3.6,
+          "frequency": 0.28,
+          "phase": 180
+        },
+        {
+          "type": "oscillation",
+          "targets": ["thorax:flank_left"],
+          "axis": "x",
+          "amplitude": 4.2,
+          "frequency": 0.28,
+          "phase": 180
+        },
+        {
+          "type": "oscillation",
+          "targets": ["thorax:flank_right"],
+          "axis": "x",
+          "amplitude": 4.2,
+          "frequency": 0.28
+        }
+      ]
+    },
+    {
+      "key": "gi_survey",
+      "skeletons": [
+        {
+          "id": "patient",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 58],
+            "sternum": [160, 92],
+            "abdomen": [160, 130],
+            "pelvis_left": [146, 158],
+            "pelvis_right": [174, 158]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["sternum", "abdomen"],
+            ["abdomen", "pelvis_left"],
+            ["abdomen", "pelvis_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 34],
+          "radius": 18,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        },
+        {
+          "id": "abdomen_ring",
+          "kind": "ellipse",
+          "center": [160, 130],
+          "width": 78,
+          "height": 56,
+          "stroke": "#F26C3D",
+          "fill": "#FFE8D8",
+          "strokeWidth": 3,
+          "opacity": 0.5
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "target": "patient:abdomen",
+          "amplitudeX": 2.8,
+          "amplitudeY": 0.8,
+          "frequency": 0.2
+        }
+      ]
+    },
+    {
+      "key": "bradykinesia",
+      "skeletons": [
+        {
+          "id": "hand",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 5,
+          "jointRadius": 3,
+          "joints": {
+            "wrist": [160, 156],
+            "palm_center": [160, 130],
+            "thumb_tip": [118, 94],
+            "index_pip": [148, 94],
+            "index_dip": [148, 72],
+            "index_tip": [148, 50],
+            "middle_tip": [160, 38]
+          },
+          "bones": [
+            ["wrist", "palm_center"],
+            ["palm_center", "thumb_tip"],
+            ["palm_center", "index_pip"],
+            ["index_pip", "index_dip"],
+            ["index_dip", "index_tip"],
+            ["palm_center", "middle_tip"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "tap_target",
+          "kind": "circle",
+          "center": [126, 100],
+          "radius": 8,
+          "stroke": "#F26C3D",
+          "fill": "#FFE1D6",
+          "strokeWidth": 3
+        }
+      ],
+      "motions": [
+        {
+          "type": "tap_decay",
+          "target": "hand:index_tip",
+          "axis": "y",
+          "amplitude": 18,
+          "amplitudeEnd": 6,
+          "frequency": 2.2
+        },
+        {
+          "type": "tap_decay",
+          "target": "hand:index_dip",
+          "axis": "y",
+          "amplitude": 10,
+          "amplitudeEnd": 3,
+          "frequency": 2.2
+        },
+        {
+          "type": "tap_decay",
+          "target": "hand:thumb_tip",
+          "axis": "x",
+          "amplitude": 8,
+          "amplitudeEnd": 3,
+          "frequency": 2.2
+        }
+      ]
+    },
+    {
+      "key": "rigidity",
+      "skeletons": [
+        {
+          "id": "arm",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "shoulder": [102, 74],
+            "elbow": [154, 114],
+            "wrist": [210, 146],
+            "palm_center": [238, 154],
+            "index_tip": [258, 148]
+          },
+          "bones": [
+            ["shoulder", "elbow"],
+            ["elbow", "wrist"],
+            ["wrist", "palm_center"],
+            ["palm_center", "index_tip"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "examiner",
+          "kind": "polyline",
+          "points": [[256, 174], [232, 158], [220, 146]],
+          "stroke": "#F26C3D",
+          "strokeWidth": 5
+        }
+      ],
+      "motions": [
+        {
+          "type": "rotation",
+          "targets": ["arm:wrist", "arm:palm_center", "arm:index_tip"],
+          "pivot": "arm:elbow",
+          "angle": 0,
+          "amplitude": 14,
+          "frequency": 0.45
+        },
+        {
+          "type": "oscillation",
+          "targets": ["arm:wrist", "arm:index_tip"],
+          "axis": "y",
+          "amplitude": 2.2,
+          "frequency": 4.5
+        }
+      ]
+    },
+    {
+      "key": "parkinson_tremor",
+      "skeletons": [
+        {
+          "id": "hand",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 5,
+          "jointRadius": 3,
+          "joints": {
+            "wrist": [160, 156],
+            "palm_center": [160, 130],
+            "thumb_tip": [118, 94],
+            "index_tip": [148, 50],
+            "middle_tip": [160, 38]
+          },
+          "bones": [
+            ["wrist", "palm_center"],
+            ["palm_center", "thumb_tip"],
+            ["palm_center", "index_tip"],
+            ["palm_center", "middle_tip"]
+          ]
+        }
+      ],
+      "figures": [],
+      "motions": [
+        {
+          "type": "oscillation",
+          "target": "hand:thumb_tip",
+          "axis": "circle",
+          "amplitudeX": 3.2,
+          "amplitudeY": 2.2,
+          "frequency": 4.5
+        },
+        {
+          "type": "oscillation",
+          "target": "hand:index_tip",
+          "axis": "y",
+          "amplitude": 2.4,
+          "frequency": 4.5,
+          "phase": 50
+        }
+      ]
+    },
+    {
+      "key": "essential_tremor",
+      "skeletons": [
+        {
+          "id": "posture",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 54],
+            "sternum": [160, 82],
+            "shoulder_left": [132, 76],
+            "wrist_left": [92, 118],
+            "shoulder_right": [188, 76],
+            "wrist_right": [228, 118]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["neck", "shoulder_left"],
+            ["shoulder_left", "wrist_left"],
+            ["neck", "shoulder_right"],
+            ["shoulder_right", "wrist_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 32],
+          "radius": 17,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "targets": ["posture:wrist_left", "posture:wrist_right"],
+          "axis": "x",
+          "amplitude": 4.8,
+          "frequency": 8
+        },
+        {
+          "type": "oscillation",
+          "targets": ["posture:wrist_left", "posture:wrist_right"],
+          "axis": "y",
+          "amplitude": 2.2,
+          "frequency": 8,
+          "phase": 90
+        }
+      ]
+    },
+    {
+      "key": "chorea",
+      "skeletons": [
+        {
+          "id": "hand",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 5,
+          "jointRadius": 3,
+          "joints": {
+            "wrist": [160, 156],
+            "palm_center": [160, 130],
+            "thumb_tip": [120, 96],
+            "index_tip": [148, 52],
+            "middle_tip": [160, 40],
+            "pinky_tip": [196, 66]
+          },
+          "bones": [
+            ["wrist", "palm_center"],
+            ["palm_center", "thumb_tip"],
+            ["palm_center", "index_tip"],
+            ["palm_center", "middle_tip"],
+            ["palm_center", "pinky_tip"]
+          ]
+        }
+      ],
+      "figures": [],
+      "motions": [
+        {
+          "type": "random_impulse",
+          "target": "hand:palm_center",
+          "amplitudeX": 8,
+          "amplitudeY": 6,
+          "interval": 0.55,
+          "duration": 0.18
+        },
+        {
+          "type": "random_impulse",
+          "target": "hand:index_tip",
+          "amplitudeX": 6,
+          "amplitudeY": 8,
+          "interval": 0.42,
+          "duration": 0.14
+        },
+        {
+          "type": "random_impulse",
+          "target": "hand:thumb_tip",
+          "amplitudeX": 5,
+          "amplitudeY": 5,
+          "interval": 0.5,
+          "duration": 0.12,
+          "phase": 45
+        }
+      ]
+    },
+    {
+      "key": "dystonia",
+      "skeletons": [
+        {
+          "id": "arm",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "shoulder": [110, 78],
+            "elbow": [156, 114],
+            "wrist": [204, 146],
+            "palm_center": [232, 154],
+            "index_tip": [254, 146]
+          },
+          "bones": [
+            ["shoulder", "elbow"],
+            ["elbow", "wrist"],
+            ["wrist", "palm_center"],
+            ["palm_center", "index_tip"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "twist_ring",
+          "kind": "ellipse",
+          "center": [230, 150],
+          "width": 44,
+          "height": 22,
+          "stroke": "#F26C3D",
+          "fill": "#FFE1D6",
+          "strokeWidth": 3,
+          "opacity": 0.5
+        }
+      ],
+      "motions": [
+        {
+          "type": "rotation",
+          "targets": ["arm:wrist", "arm:palm_center", "arm:index_tip"],
+          "pivot": "arm:elbow",
+          "angle": 18,
+          "amplitude": 4,
+          "frequency": 0.18
+        }
+      ]
+    },
+    {
+      "key": "myoclonus",
+      "skeletons": [
+        {
+          "id": "arm",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "shoulder": [104, 76],
+            "elbow": [154, 114],
+            "wrist": [206, 146],
+            "palm_center": [236, 154],
+            "index_tip": [258, 144]
+          },
+          "bones": [
+            ["shoulder", "elbow"],
+            ["elbow", "wrist"],
+            ["wrist", "palm_center"],
+            ["palm_center", "index_tip"]
+          ]
+        }
+      ],
+      "figures": [],
+      "motions": [
+        {
+          "type": "impulse",
+          "target": "arm:wrist",
+          "amplitudeX": 10,
+          "amplitudeY": 8,
+          "interval": 1.1,
+          "duration": 0.12
+        },
+        {
+          "type": "impulse",
+          "target": "arm:palm_center",
+          "amplitudeX": 14,
+          "amplitudeY": 10,
+          "interval": 1.1,
+          "duration": 0.1
+        }
+      ]
+    },
+    {
+      "key": "parkinson_gait",
+      "skeletons": [
+        {
+          "id": "gait",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 40],
+            "sternum": [160, 66],
+            "pelvis": [160, 108],
+            "wrist_left": [132, 108],
+            "wrist_right": [188, 108],
+            "hip_left": [148, 108],
+            "ankle_left": [144, 184],
+            "foot_left": [136, 198],
+            "hip_right": [172, 108],
+            "ankle_right": [176, 186],
+            "foot_right": [184, 200]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["sternum", "pelvis"],
+            ["pelvis", "hip_left"],
+            ["hip_left", "ankle_left"],
+            ["ankle_left", "foot_left"],
+            ["pelvis", "hip_right"],
+            ["hip_right", "ankle_right"],
+            ["ankle_right", "foot_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 22],
+          "radius": 15,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        }
+      ],
+      "motions": [
+        {
+          "type": "rotation",
+          "targets": ["gait:neck", "gait:sternum", "gait:wrist_left", "gait:wrist_right"],
+          "pivot": "gait:pelvis",
+          "angle": 8
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:ankle_left", "gait:foot_left"],
+          "axis": "x",
+          "amplitude": 6,
+          "frequency": 1
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:ankle_right", "gait:foot_right"],
+          "axis": "x",
+          "amplitude": 6,
+          "frequency": 1,
+          "phase": 180
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:wrist_left"],
+          "axis": "x",
+          "amplitude": 1.8,
+          "frequency": 1,
+          "phase": 180
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:wrist_right"],
+          "axis": "x",
+          "amplitude": 1.8,
+          "frequency": 1
+        }
+      ]
+    },
+    {
+      "key": "cerebellar_gait",
+      "skeletons": [
+        {
+          "id": "gait",
+          "stroke": "#173F5F",
+          "fill": "#173F5F",
+          "strokeWidth": 6,
+          "jointRadius": 4,
+          "joints": {
+            "neck": [160, 40],
+            "sternum": [160, 66],
+            "pelvis": [160, 108],
+            "wrist_left": [124, 114],
+            "wrist_right": [196, 114],
+            "hip_left": [144, 108],
+            "ankle_left": [124, 184],
+            "foot_left": [114, 198],
+            "hip_right": [176, 108],
+            "ankle_right": [196, 184],
+            "foot_right": [206, 198]
+          },
+          "bones": [
+            ["neck", "sternum"],
+            ["sternum", "pelvis"],
+            ["pelvis", "hip_left"],
+            ["hip_left", "ankle_left"],
+            ["ankle_left", "foot_left"],
+            ["pelvis", "hip_right"],
+            ["hip_right", "ankle_right"],
+            ["ankle_right", "foot_right"]
+          ]
+        }
+      ],
+      "figures": [
+        {
+          "id": "head",
+          "kind": "circle",
+          "center": [160, 22],
+          "radius": 15,
+          "stroke": "#173F5F",
+          "fill": "#F8E3C6",
+          "strokeWidth": 4
+        }
+      ],
+      "motions": [
+        {
+          "type": "oscillation",
+          "targets": ["gait:neck", "gait:sternum", "gait:wrist_left", "gait:wrist_right"],
+          "axis": "x",
+          "amplitude": 12,
+          "frequency": 0.55
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:ankle_left", "gait:foot_left"],
+          "axis": "x",
+          "amplitude": 8,
+          "frequency": 0.8
+        },
+        {
+          "type": "oscillation",
+          "targets": ["gait:ankle_right", "gait:foot_right"],
+          "axis": "x",
+          "amplitude": 8,
+          "frequency": 0.8,
+          "phase": 170
+        }
+      ]
+    }
+  ]
+}

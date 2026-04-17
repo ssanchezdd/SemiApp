@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="HomePageRoot"
+    x:Class="SemiologyAtlas.Pages.HomePage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:SemiologyAtlas.Models"
+    xmlns:vm="clr-namespace:SemiologyAtlas.ViewModels"
+    x:DataType="vm:HomeViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,18,20,40" Spacing="20">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding LanguageStatusText}" VerticalOptions="Center" />
+                <Button Clicked="OnToggleLanguageClicked" Style="{StaticResource OutlineButtonStyle}" Text="{Binding LanguageButtonText}" />
+            </Grid>
+
+            <Border Background="{StaticResource HeroBrush}" Padding="24" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="28" />
+                </Border.StrokeShape>
+
+                <VerticalStackLayout Spacing="18">
+                    <VerticalStackLayout Spacing="6">
+                        <Label Style="{StaticResource EyebrowLabel}" Text="{Binding DeckLabel}" TextColor="{StaticResource WarmWhite}" />
+                        <Label Style="{StaticResource HeroTitleLabel}" Text="{Binding AppTitle}" />
+                        <Label
+                            Style="{StaticResource HeroBodyLabel}"
+                            Text="{Binding HeroDescription}" />
+                    </VerticalStackLayout>
+
+                    <Grid ColumnDefinitions="*,*,*" ColumnSpacing="12">
+                        <Border Background="#26FFFFFF" Padding="14" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="18" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="2">
+                                <Label Style="{StaticResource StatValueLabel}" Text="{Binding ModuleCount}" />
+                                <Label Style="{StaticResource StatCaptionLabel}" Text="{Binding ModulesStatLabel}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border Grid.Column="1" Background="#26FFFFFF" Padding="14" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="18" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="2">
+                                <Label Style="{StaticResource StatValueLabel}" Text="{Binding MovementCount}" />
+                                <Label Style="{StaticResource StatCaptionLabel}" Text="{Binding MovementStatLabel}" />
+                            </VerticalStackLayout>
+                        </Border>
+
+                        <Border Grid.Column="2" Background="#26FFFFFF" Padding="14" StrokeThickness="0">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="18" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="2">
+                                <Label Style="{StaticResource StatValueLabel}" Text="{Binding QuizCount}" />
+                                <Label Style="{StaticResource StatCaptionLabel}" Text="{Binding QuizStatLabel}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding StartWithTitle}" />
+                <ScrollView Orientation="Horizontal">
+                    <HorizontalStackLayout
+                        Spacing="14"
+                        BindableLayout.ItemsSource="{Binding LearningPaths}">
+                        <BindableLayout.ItemTemplate>
+                            <DataTemplate x:DataType="models:LearningPath">
+                                <Border Background="{StaticResource CardBrush}" Padding="18" Stroke="{StaticResource MistBrush}" WidthRequest="270">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="22" />
+                                    </Border.StrokeShape>
+                                    <VerticalStackLayout Spacing="12">
+                                        <Label Style="{StaticResource EyebrowDarkLabel}" Text="{Binding Workload}" />
+                                        <Label Style="{StaticResource CardTitleLabel}" Text="{Binding Title}" />
+                                        <Label Style="{StaticResource BodyLabel}" Text="{Binding Subtitle}" />
+                                        <Button
+                                            Clicked="OnOpenRouteClicked"
+                                            CommandParameter="{Binding Route}"
+                                            Style="{StaticResource AccentButtonStyle}"
+                                            Text="{Binding ActionText}" />
+                                    </VerticalStackLayout>
+                                </Border>
+                            </DataTemplate>
+                        </BindableLayout.ItemTemplate>
+                    </HorizontalStackLayout>
+                </ScrollView>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding TeachingRulesTitle}" />
+                <VerticalStackLayout
+                    Spacing="10"
+                    BindableLayout.ItemsSource="{Binding TeachingRules}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="x:String">
+                            <Grid ColumnDefinitions="14,*" ColumnSpacing="10">
+                                <Border Background="{StaticResource CoralBrush}" HeightRequest="14" StrokeThickness="0" VerticalOptions="Start" WidthRequest="14">
+                                    <Border.StrokeShape>
+                                        <RoundRectangle CornerRadius="7" />
+                                    </Border.StrokeShape>
+                                </Border>
+                                <Label Grid.Column="1" Style="{StaticResource BodyLabel}" Text="{Binding .}" />
+                            </Grid>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+
+            <VerticalStackLayout Spacing="10">
+                <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding SpotlightTitle}" />
+                <VerticalStackLayout
+                    Spacing="14"
+                    BindableLayout.ItemsSource="{Binding SpotlightModules}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="models:SystemModule">
+                            <Border Background="{StaticResource CardBrush}" Padding="18" Stroke="{StaticResource MistBrush}">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="22" />
+                                </Border.StrokeShape>
+                                <VerticalStackLayout Spacing="10">
+                                    <Label Style="{StaticResource EyebrowDarkLabel}" Text="{Binding System}" />
+                                    <Label Style="{StaticResource CardTitleLabel}" Text="{Binding Title}" />
+                                    <Label Style="{StaticResource BodyLabel}" Text="{Binding Summary}" />
+                                    <Border Background="{StaticResource SandBrush}" Padding="14" StrokeThickness="0">
+                                        <Border.StrokeShape>
+                                            <RoundRectangle CornerRadius="16" />
+                                        </Border.StrokeShape>
+                                        <VerticalStackLayout Spacing="6">
+                                            <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding TeachingLabel}" />
+                                            <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding CoreQuestion}" />
+                                        </VerticalStackLayout>
+                                    </Border>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </VerticalStackLayout>
+            </VerticalStackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

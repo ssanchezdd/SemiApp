@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Name="SystemsPageRoot"
+    x:Class="SemiologyAtlas.Pages.SystemsPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:SemiologyAtlas.Controls"
+    xmlns:models="clr-namespace:SemiologyAtlas.Models"
+    xmlns:vm="clr-namespace:SemiologyAtlas.ViewModels"
+    x:DataType="vm:SystemsViewModel"
+    Shell.NavBarIsVisible="False">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20,18,20,40" Spacing="18">
+            <Grid ColumnDefinitions="*,Auto" ColumnSpacing="12">
+                <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding LanguageStatusText}" VerticalOptions="Center" />
+                <Button Clicked="OnToggleLanguageClicked" Style="{StaticResource OutlineButtonStyle}" Text="{Binding LanguageButtonText}" />
+            </Grid>
+
+            <Border Background="{StaticResource BannerBrush}" Padding="22" StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="26" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Style="{StaticResource EyebrowLabel}" Text="{Binding LibraryLabel}" TextColor="{StaticResource WarmWhite}" />
+                    <Label Style="{StaticResource BannerTitleLabel}" Text="{Binding PageTitle}" />
+                    <Label
+                        Style="{StaticResource HeroBodyLabel}"
+                        Text="{Binding HeroDescription}" />
+                </VerticalStackLayout>
+            </Border>
+
+            <Border Background="{StaticResource WarmWhiteBrush}" Padding="6,2" Stroke="{StaticResource MistBrush}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="18" />
+                </Border.StrokeShape>
+                <SearchBar Placeholder="{Binding SearchPlaceholder}" Text="{Binding SearchText}" />
+            </Border>
+
+            <ScrollView Orientation="Horizontal">
+                <HorizontalStackLayout
+                    Spacing="10"
+                    BindableLayout.ItemsSource="{Binding Filters}">
+                    <BindableLayout.ItemTemplate>
+                        <DataTemplate x:DataType="vm:FilterChip">
+                            <Button
+                                Clicked="OnFilterClicked"
+                                CommandParameter="{Binding .}"
+                                Padding="16,10"
+                                Style="{StaticResource ChipButtonStyle}"
+                                Text="{Binding Label}">
+                                <Button.Triggers>
+                                    <DataTrigger Binding="{Binding IsSelected}" TargetType="Button" Value="True">
+                                        <Setter Property="BackgroundColor" Value="{StaticResource DeepTeal}" />
+                                        <Setter Property="TextColor" Value="{StaticResource WarmWhite}" />
+                                        <Setter Property="BorderColor" Value="{StaticResource DeepTeal}" />
+                                    </DataTrigger>
+                                </Button.Triggers>
+                            </Button>
+                        </DataTemplate>
+                    </BindableLayout.ItemTemplate>
+                </HorizontalStackLayout>
+            </ScrollView>
+
+            <Label IsVisible="{Binding NoResultsVisible}" Style="{StaticResource BodyMutedLabel}" Text="{Binding NoResultsText}" />
+
+            <VerticalStackLayout
+                Spacing="14"
+                BindableLayout.ItemsSource="{Binding VisibleModules}">
+                <BindableLayout.ItemTemplate>
+                    <DataTemplate x:DataType="models:SystemModule">
+                        <Border Background="{StaticResource CardBrush}" Padding="18" Stroke="{StaticResource MistBrush}">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="22" />
+                            </Border.StrokeShape>
+                            <VerticalStackLayout Spacing="10">
+                                <Label Style="{StaticResource EyebrowDarkLabel}" Text="{Binding System}" />
+                                <Label Style="{StaticResource CardTitleLabel}" Text="{Binding Title}" />
+                                <Label Style="{StaticResource BodyLabel}" Text="{Binding Summary}" />
+                                <Button
+                                    Clicked="OnReviewModuleClicked"
+                                    CommandParameter="{Binding .}"
+                                    Style="{StaticResource OutlineButtonStyle}"
+                                    Text="{Binding ReviewActionText}" />
+                            </VerticalStackLayout>
+                        </Border>
+                    </DataTemplate>
+                </BindableLayout.ItemTemplate>
+            </VerticalStackLayout>
+
+            <Border
+                Background="{StaticResource WarmWhiteBrush}"
+                IsVisible="{Binding HasSelectedModule}"
+                Padding="20"
+                Stroke="{StaticResource MistBrush}">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="24" />
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="14">
+                    <Border Background="{StaticResource CardBrush}" Padding="10" Stroke="{StaticResource MistBrush}">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="18" />
+                        </Border.StrokeShape>
+                        <controls:AnimatedClinicalView AnimationKey="{Binding SelectedModule.AnimationKey}" HeightRequest="210" />
+                    </Border>
+
+                    <Label Style="{StaticResource SectionTitleLabel}" Text="{Binding SelectedModule.Title}" />
+                    <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding SelectedModule.ExaminationScript}" />
+
+                    <Border Background="{StaticResource SandBrush}" Padding="14" StrokeThickness="0">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="16" />
+                        </Border.StrokeShape>
+                        <VerticalStackLayout Spacing="6">
+                            <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding ClinicalQuestionTitle}" />
+                            <Label Style="{StaticResource BodyLabel}" Text="{Binding SelectedModule.CoreQuestion}" />
+                        </VerticalStackLayout>
+                    </Border>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding ChecklistTitle}" />
+                        <VerticalStackLayout
+                            Spacing="8"
+                            BindableLayout.ItemsSource="{Binding SelectedModule.ExamChecklist}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+                                    <Label Style="{StaticResource BodyLabel}" Text="{Binding ., StringFormat='- {0}'}" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding KeyFindingsTitle}" />
+                        <VerticalStackLayout
+                            Spacing="10"
+                            BindableLayout.ItemsSource="{Binding SelectedModule.Findings}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:ClinicalPoint">
+                                    <Grid ColumnDefinitions="14,*" ColumnSpacing="10">
+                                        <Border Background="{StaticResource SeaGlassBrush}" HeightRequest="14" StrokeThickness="0" VerticalOptions="Start" WidthRequest="14">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="7" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Style="{StaticResource BulletTitleLabel}" Text="{Binding Title}" />
+                                            <Label Style="{StaticResource BodyLabel}" Text="{Binding Detail}" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="10">
+                        <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding StudyPearlsTitle}" />
+                        <VerticalStackLayout
+                            Spacing="10"
+                            BindableLayout.ItemsSource="{Binding SelectedModule.StudyPearls}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="models:ClinicalPoint">
+                                    <Grid ColumnDefinitions="14,*" ColumnSpacing="10">
+                                        <Border Background="{StaticResource SunwashBrush}" HeightRequest="14" StrokeThickness="0" VerticalOptions="Start" WidthRequest="14">
+                                            <Border.StrokeShape>
+                                                <RoundRectangle CornerRadius="7" />
+                                            </Border.StrokeShape>
+                                        </Border>
+                                        <VerticalStackLayout Grid.Column="1" Spacing="2">
+                                            <Label Style="{StaticResource BulletTitleLabel}" Text="{Binding Title}" />
+                                            <Label Style="{StaticResource BodyLabel}" Text="{Binding Detail}" />
+                                        </VerticalStackLayout>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding RedFlagsTitle}" />
+                        <VerticalStackLayout
+                            Spacing="8"
+                            BindableLayout.ItemsSource="{Binding SelectedModule.RedFlags}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+                                    <Label Style="{StaticResource WarningLabel}" Text="{Binding ., StringFormat='- {0}'}" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Spacing="8">
+                        <Label Style="{StaticResource SubsectionTitleLabel}" Text="{Binding PitfallsTitle}" />
+                        <VerticalStackLayout
+                            Spacing="8"
+                            BindableLayout.ItemsSource="{Binding SelectedModule.Pitfalls}">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate x:DataType="x:String">
+                                    <Label Style="{StaticResource BodyMutedLabel}" Text="{Binding ., StringFormat='- {0}'}" />
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

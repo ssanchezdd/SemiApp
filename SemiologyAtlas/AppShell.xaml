@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SemiologyAtlas.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:pages="clr-namespace:SemiologyAtlas.Pages"
+    FlyoutBehavior="Disabled"
+    Shell.NavBarHasShadow="False"
+    Title="Semiology Atlas">
+
+    <TabBar>
+        <ShellContent
+            x:Name="HomeTab"
+            Title="Atlas"
+            ContentTemplate="{DataTemplate pages:HomePage}"
+            Route="home" />
+
+        <ShellContent
+            x:Name="SystemsTab"
+            Title="Systems"
+            ContentTemplate="{DataTemplate pages:SystemsPage}"
+            Route="library" />
+
+        <ShellContent
+            x:Name="MovementTab"
+            Title="Movement"
+            ContentTemplate="{DataTemplate pages:MovementLabPage}"
+            Route="movement" />
+
+        <ShellContent
+            x:Name="QuizTab"
+            Title="Quiz"
+            ContentTemplate="{DataTemplate pages:QuizPage}"
+            Route="quiz" />
+    </TabBar>
+</Shell>
