@@ -162,6 +162,28 @@ tr:nth-child(even){background:#f0f4f1}
 .facies-card strong{display:block;color:var(--primary-dark);margin-bottom:.25rem;font-size:.92rem}
 .facies-card span{font-size:.85rem;color:var(--text-light)}
 
+/* ===== Facies paired entries (image + description side by side) ===== */
+.facies-list{display:flex;flex-direction:column;gap:1rem;margin-top:.8rem}
+.facies-entry{
+  display:flex;gap:0;align-items:stretch;
+  background:var(--bg);border-radius:var(--radius-sm);
+  border-left:4px solid var(--primary);overflow:hidden;
+}
+.facies-entry .facies-img{
+  flex:0 0 240px;background:#fff;cursor:pointer;
+  transition:transform var(--transition),box-shadow var(--transition);
+  align-self:flex-start;
+}
+.facies-entry .facies-img:hover{transform:scale(1.02);box-shadow:var(--shadow-lg)}
+.facies-entry .facies-img img{width:100%;height:auto;display:block;object-fit:cover}
+.facies-entry .facies-text{padding:1rem 1.2rem;flex:1;min-width:0}
+.facies-entry .facies-text strong{display:block;color:var(--primary-dark);margin-bottom:.35rem;font-size:1rem}
+.facies-entry .facies-text span{font-size:.9rem;color:var(--text-light);line-height:1.5}
+@media(max-width:640px){
+  .facies-entry{flex-direction:column}
+  .facies-entry .facies-img{flex:1;width:100%;max-width:100%}
+}
+
 /* ===== Quiz ===== */
 .quiz-container{max-width:700px}
 .quiz-progress{
