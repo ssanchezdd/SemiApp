@@ -21,7 +21,7 @@ function navigateTo(sectionId) {
   // Close mobile sidebar
   closeSidebar();
   // Render quiz if needed
-  if (sectionId === 'autoevaluación' && !quizRendered) renderQuiz();
+  if (sectionId === 'autoevaluacion') renderQuiz();
 }
 
 // Sidebar links
